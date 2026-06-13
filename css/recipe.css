@@ -1,5 +1,4 @@
 /* ===== RESET ===== */
-
 * {
     margin: 0;
     padding: 0;
@@ -7,61 +6,42 @@
 }
 
 /* ===== BODY ===== */
-
 body {
-    color: #ffffff;   /* MAIN TEXT NOW WHITE */
+    color: #404040;  /* SPEC: dark gray text */
     font-family: Georgia, Garamond, serif;
     font-size: 11pt;
     line-height: 1.65;
-
     padding: 40px 20px;
-
     position: relative;
     min-height: 100vh;
 }
 
-/* ===== BACKGROUND IMAGE ===== */
-
+/* ===== SILVERWARE BACKGROUND (Extra Feature #1) ===== */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-
     background-image: url("../images/silverware.png");
     background-repeat: repeat;
     background-position: top left;
-
+    background-attachment: fixed;
     z-index: -2;
 }
 
-/* ===== DARK OVERLAY ===== */
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.55); /* darker for white text */
-
-    z-index: -1;
-}
-
-/* ===== PAGE CONTAINER ===== */
-
+/* ===== PAGE CONTAINER - WHITE CARD OVER SILVERWARE ===== */
 .page {
     max-width: 900px;
     margin: 0 auto;
     padding: 30px 40px;
-
-    background: transparent;
+    background: white;  /* SPEC: white background behind content */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== HEADINGS ===== */
-
-h1,
-h2 {
-    color: #FFD700;  /* gold so it stands out on dark bg */
-    background-color: rgba(255, 255, 255, 0.08);
+/* ===== HEADINGS - SPEC COMPLIANT ===== */
+h1, h2 {
+    color: #A4A400;  /* SPEC: olive gold */
+    background-color: #F0F0F0;  /* SPEC: light gray */
     font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
     text-decoration: underline;
     letter-spacing: 0.25em;
@@ -73,6 +53,7 @@ h1 {
     font-weight: bold;
     padding: 12px 20px;
     margin-bottom: 30px;
+    border-radius: 12px;
 }
 
 h2 {
@@ -81,40 +62,21 @@ h2 {
     font-weight: normal;
     padding: 6px 18px;
     margin-bottom: 20px;
+    border-radius: 8px;
 }
 
-h1 i {
-    margin-right: 10px;
-}
-
-/* ===== IMAGE ===== */
-
-.pie-photo {
-    width: 220px;
-    height: auto;
-    margin: 15px 0;
-}
-
-/* ===== QUICK INFO ===== */
-
-.quick-info p {
-    margin-bottom: 5px;
-}
-
-/* ===== LINKS ===== */
-
+/* ===== LINKS - SPEC COMPLIANT ===== */
 a {
-    color: #FFD700;
+    color: #A4A400;
     text-decoration: none;
 }
 
 a:hover {
-    color: #ffffff;
+    color: #7c7c00;
     text-decoration: underline;
 }
 
-/* ===== LISTS ===== */
-
+/* ===== LISTS - PIE BULLETS ===== */
 ul {
     list-style-image: url("../imges/pie_bullet.jpg");
     margin-left: 30px;
@@ -138,18 +100,83 @@ ol > li {
     margin-bottom: 15px;
 }
 
-/* ===== COMMENTS ===== */
-
+/* ===== COMMENTS - SPEC COMPLIANT ===== */
 .comment {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: #FFFFA8;  /* SPEC: light yellow */
     font-style: italic;
     padding: 14px 22px;
     margin: 18px 0;
-    border-left: 4px solid #FFD700;
+    border-left: 4px solid #A4A400;
+    border-radius: 8px;
+}
+
+.comment .author {
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #A4A400;
+}
+
+/* ===== IMAGE ===== */
+.pie-photo {
+    width: 220px;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== QUICK INFO ===== */
+.quick-info p {
+    margin-bottom: 5px;
+}
+
+.quick-info i {
+    color: #A4A400;
+    width: 28px;
+    margin-right: 8px;
+}
+
+/* ===== DIVIDERS ===== */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}
+
+/* ===== ABBREVIATIONS ===== */
+abbr {
+    text-decoration: underline;
+    cursor: help;
+}
+
+abbr:hover {
+    background-color: #F0F0F0;
+}
+
+/* ===== STRIKETHROUGH ===== */
+del {
+    text-decoration: line-through;
+}
+
+ins {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== COPYRIGHT ===== */
+pre {
+    font-family: monospace;
+    font-size: 10pt;
+    line-height: 1.4;
+    background: #f8f8f8;
+    padding: 12px 18px;
+    margin: 20px 0 15px 0;
+    border-left: 3px solid #A4A400;
+    border-radius: 8px;
 }
 
 /* ===== VALIDATORS ===== */
-
 .validators {
     text-align: right;
     margin-top: 15px;
@@ -157,18 +184,17 @@ ol > li {
 
 .validators img {
     border: 0;
+    margin-left: 10px;
 }
 
 /* ===== RESPONSIVE ===== */
-
 @media (max-width: 650px) {
-
     body {
         padding: 20px 12px;
     }
 
     .page {
-        padding: 15px;
+        padding: 20px;
     }
 
     h1 {
@@ -181,5 +207,9 @@ ol > li {
 
     .pie-photo {
         width: 150px;
+    }
+
+    ul, ol {
+        margin-left: 15px;
     }
 }
